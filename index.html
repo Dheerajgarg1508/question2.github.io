@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+</head>
+<body>
+
+    <h1>Welcome to the College Website</h1>
+
+    <div>
+        <h2>User Information</h2>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <button type="button" onclick="viewData()">View Data</button>
+        </form>
+    </div>
+
+    <div id="userData" style="display: none;">
+        <h3>User Data</h3>
+        <p id="userName"></p>
+        <p id="userEmail"></p>
+        <p>You are viewing the website data.</p>
+    </div>
+
+    <script>
+        function viewData() {
+            // Get user input
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Display user data
+            document.getElementById('userName').textContent = 'Name: ' + name;
+            document.getElementById('userEmail').textContent = 'Email: ' + email;
+
+            // Show user data and hide the form
+            document.getElementById('userData').style.display = 'block';
+            document.getElementById('userForm').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
